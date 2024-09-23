@@ -29,12 +29,9 @@ export const FilledForm: Story = {
   }),
   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
-
     // 👇 Simulate interactions with the component
     await userEvent.type(canvas.getByLabelText('Email:'), 'email@provider.com');
-
     await userEvent.type(canvas.getByLabelText('Password:'), 'a-random-password');
-
     // See https://storybook.js.org/docs/essentials/actions#automatically-matching-args to learn how to setup logging in the Actions panel
     await userEvent.click(canvas.getByRole('button'));
 
